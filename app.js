@@ -9,6 +9,7 @@ const indexRouter = require('./api/index');
 const playersRouter = require('./api/players')
 
 const app = express();
+app.use(cors())
 
 //handle favicon.ico notfound using module serve-favicon
 app.use(favicon(path.join(__dirname, './', 'favicon16x16.ico')))
