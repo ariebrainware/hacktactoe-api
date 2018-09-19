@@ -11,6 +11,7 @@ This repository will handle backend section from Hack Tac Toe. Players data will
 Data players store in MongoDB Cloud service, and API handled by Heroku
 url : https://hacktactoe-api.herokuapp.com
 
-| Endpoint | Description              |
-| -------- | ------------------------ |
-| /players | Show Players credentials |
+| Endpoint | Method | Description              |
+| -------- | ------ | ------------------------ |
+| /players | GET    | Show Players credentials |
+| /login   | POST   | Player login             |
