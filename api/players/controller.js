@@ -19,17 +19,22 @@ const controller = {
           username
         }).then(player => {
           if (player) {
-            const token = jwt.sign({
-                username
-              },
-              process.env.JWT_SECRET, {
-                expiresIn: "12h"
-              }
-            );
-
-            res.status(200).send({
-              token
-            })
+            if (player.password === password) {
+              const token = jwt.sign({
+                  username
+                },
+                process.env.JWT_SECRET, {
+                  expiresIn: "12h"
+                }
+              )
+              res.status(200).send({
+                token
+              })
+            } else {
+              res.status(417).send({
+                message: "Wrong password"
+              })
+            }
           } else {
             res.status(404).send({
               message: "Players doesn't exist!!"
