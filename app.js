@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const favicon = require('serve-favicon')
+const cors = require('cors')
 
 const indexRouter = require('./api/index');
 const playersRouter = require('./api/players')
